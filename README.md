@@ -14,3 +14,4 @@
 3. Deploy Spark workflows in Azure Databricks
 4. Save classified events in persistent storage
 
+![architecture_initial](https://github.com/user-attachments/assets/111ddc48-e790-43d0-98ab-8e62354585ec)
