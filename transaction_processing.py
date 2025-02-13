@@ -40,21 +40,21 @@ if __name__ == "__main__":
 
     spark.sparkContext.setLogLevel("ERROR")
     print(f"This cluster relies on Spark '{spark.version}'")
+
+    # Application configurations
+    root_filepath = ""
+    string_indexer_filepath = f"{root_filepath}/models/string_indexer"
+    classifier_filepath = f"{root_filepath}/models/classifier"
+    checkpoint_filepath = f"{root_filepath}/checkpoint"
     
     # Streaming configurations
     kafka_topic_input = "transactions_raw_v1" # topic name for input transaction events
     kafka_topic_output = "transactions_classified_v1" # topic name input transaction classification events
     kafka_bootstrap_server_address = "localhost:9092" # server address for kafka connection
-    checkpoint_filepath = "/home/osbdet/notebooks/real-time-analytics/checkpoint"
     
     # Object storage configurations
     s3_files_timestamp_col = "trans_date_trans_time" # timestamp col name of raw events landed in object storage
     num_historical_transactions = 5 # transaction history threshold for processing
-    
-    # Classifier configurations
-    string_indexer_filepath = "/home/osbdet/notebooks/real-time-analytics/classifier/string_indexer"
-    rf_classifier_filepath = "/home/osbdet/notebooks/real-time-analytics/classifier/model"
-
 
     # Schema for deserialization
     schema = """
@@ -205,7 +205,7 @@ if __name__ == "__main__":
         df_transaction_encoded = encode_transaction(df_transaction_enriched)
         df_transaction_vectorized = vectorize_transaction(df_transaction_encoded)
         
-        loaded_rf_model = RandomForestClassificationModel.load(rf_classifier_filepath)
+        loaded_rf_model = RandomForestClassificationModel.load(classifier_filepath)
         df_transaction_classified = loaded_rf_model.transform(df_transaction_vectorized)
         df_transaction_classification_event = construct_classification_event(df_transaction_classified)
         
