@@ -1,2 +1,2 @@
 # transaction-real-time-analytics
-Prototype for applying ML classifier to transactions in real time using Big Data technologies
+Prototype for applying ML classifier to credit card transactions in real time.
