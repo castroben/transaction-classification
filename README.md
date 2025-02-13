@@ -13,15 +13,3 @@
 2. Enforce serialization/deserialization through a Schema Registry  
 3. Deploy Spark workflows in Azure Databricks  
 
-
-### Ingestion Engine
-
-
-### Landing Zone
-
-
-### Stream Processing
-
-
-### ML Classifier
-
