@@ -1,2 +1,2 @@
-# transaction-real-time-analytics
-Prototype for applying ML classifier to credit card transactions in real time.
+# real-time transaction classification
+Prototype for processing records in real-time using Spark and Kafka.
