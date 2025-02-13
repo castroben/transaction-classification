@@ -11,5 +11,6 @@
 ### Future improvements:
 1. Reimplement ingestion and streaming capabilities in Confluent  
 2. Enforce serialization/deserialization through a Schema Registry  
-3. Deploy Spark workflows in Azure Databricks  
+3. Deploy Spark workflows in Azure Databricks
+4. Save classified events in persistent storage
 
