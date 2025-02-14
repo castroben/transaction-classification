@@ -1,6 +1,6 @@
 # real-time transaction classification
 
-### This project is meant to define a prototype for processing events in real time using "big data" technologies. 
+### This project a [Work In Progress], and is meant to define a prototype for processing events in real time using open-source technologies. 
 
 ### Principal Components:
 1. Ingestion engine implemented in Apache Nifi  
